@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playgroup Student Profile</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background_image.jpg') no-repeat center center/cover;
+    padding: 20px;
+}
+
+/* Dark overlay for background image */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust darkness level (0.5 = 50%) */
+    z-index: 1;
+}
+
+/* Profile Card */
+.profile-card {
+    position: relative;
+    z-index: 2; /* Ensures the card is above the overlay */
+    background: #ffebcd;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease-in-out;
+    border: 5px solid #E30B0B;
+    animation: bounce 2s ease-in-out;
+    animation-iteration-count: 2;
+}
+
+/* Profile Image */
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+    animation: float 3s ease-in-out;
+    animation-iteration-count: 2;
+}
+
+/* School Logo */
+.school-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    animation: rotate 4s linear infinite;
+}
+
+/* Profile Card Text */
+.profile-card h2 {
+    margin: 10px 0;
+    font-size: 26px;
+    color: #E30B0B;
+}
+
+.profile-card p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Info Box */
+.info {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ffdab9;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Map Container */
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Embedded Map */
+.map {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    border: 2px solid #ff4500;
+}
+
+.map:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: scale(0.95); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .profile-card {
+        padding: 15px;
+    }
+    .profile-card h2 {
+        font-size: 22px;
+    }
+    .profile-card p, .info {
+        font-size: 16px;
+    }
+    .map {
+        height: 150px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card" id="profile">
+        <img src="school_logo.jpg" alt="School Logo" class="school-logo">
+        <h3> Indumati Appasoa Shirke Shishu Vikas Mandir,Jaysingpur</h3>
+        <img src="Nidhi_patil.png">
+        <h2>Nidhi Nilesh Patil</h2>
+        <p>Herwade Colony, Jaysingpur</p>
+        <p>Phone: +91 83810 98363</p>
+        <div class="info">
+            <p>Meet Nidhi, a bright and cheerful girl in playgroup. She is curious and eager to learn, enjoying activities like coloring, storytelling, and playing with building blocks.Her hobbies include drawing, dancing to fun songs, and exploring picture books. Nidhi is friendly, kind, and full of energy. She loves making new friends and sharing her toys.</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6153.863348335006!2d74.53966513065085!3d16.77343649993896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc11f204fbeaf07%3A0xf9f139d35ea7dfe1!2sHerwade%20Colony%2C%20Shivashakti%20Colony%2C%20Jayshingpur%20Rural%2C%20Jaysingpur%2C%20Maharashtra%20416101!5e1!3m2!1sen!2sin!4v1743956686837!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+    </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                let profile = document.getElementById("profile");
+                profile.style.opacity = "1";
+                profile.style.transform = "scale(1)";
+            }, 500);
+        });
+    </script>
+</body>
+</html>
